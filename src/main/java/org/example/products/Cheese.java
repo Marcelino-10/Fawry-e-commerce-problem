@@ -1,10 +1,7 @@
 package org.example.products;
 
-import org.example.expiration.Expiration;
 import org.example.expiration.ExpiringItem;
-import org.example.products.Product;
 import org.example.shipping.ShippedItem;
-import org.example.shipping.Shipping;
 
 import java.util.Date;
 

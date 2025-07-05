@@ -4,7 +4,7 @@ import org.example.products.Product;
 
 public class Item {
     private final Product product;
-    private int quantity;
+    private final int quantity;
 
     public Item(Product product, int quantity){
         this.product = product;
@@ -17,9 +17,5 @@ public class Item {
 
     public Product getProduct(){
         return this.product;
-    }
-
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
     }
 }

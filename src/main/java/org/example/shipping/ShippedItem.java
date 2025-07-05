@@ -1,10 +1,8 @@
 package org.example.shipping;
 
-import org.example.shipping.Shipping;
-
 public class ShippedItem implements Shipping {
-    private double weight;
-    private int fees;
+    private final double weight;
+    private final int fees;
     public ShippedItem(double weight, int fees){
         this.weight = weight;
         this.fees = fees;

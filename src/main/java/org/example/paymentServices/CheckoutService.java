@@ -1,27 +1,28 @@
-package org.example;
+package org.example.paymentServices;
 
+import org.example.Cart;
+import org.example.Customer;
+import org.example.Item;
 import org.example.products.Product;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
-public class Checkout {
+public class CheckoutService {
     Customer customer;
     Cart cart;
 
-    public Checkout(Customer customer, Cart cart){
+    public CheckoutService(Customer customer, Cart cart){
         this.customer = customer;
         this.cart = cart;
     }
 
-    public void CheckoutService(Customer customer, Cart cart){
-        double price = 0;
+    public void Checkout(Customer customer, Cart cart){
         List<Item> items = cart.getItems();
 
-        if(cart == null || cart.getItems().isEmpty())
+        if(items.isEmpty())
             throw new RuntimeException("The cart is Empty");
 
+        double price = 0;
         for(Item it : items){
             if(it.getProduct().isExpired())
                 throw new RuntimeException("Product is Expired");
@@ -43,7 +44,7 @@ public class Checkout {
         customer.setBalance(customer.getBalance() - (price + shippingFees));
 
         System.out.println("** Checkout receipt **");
-        for (Item it : cart.getItems()) {
+        for (Item it : items) {
             Product p = it.getProduct();
             System.out.println(it.getQuantity() + "X " + p.getName() + "    " + p.getPrice() * it.getQuantity());
         }

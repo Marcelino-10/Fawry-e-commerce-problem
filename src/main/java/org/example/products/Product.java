@@ -39,11 +39,6 @@ public abstract class Product {
     public double shippingWeight(){
         return shipping.getWeight();
     }
-
-    public Date expiryDate(){
-        return expiry.getExpiry();
-    }
-
     public boolean isExpired(){
         return expiry.isExpired();
     }

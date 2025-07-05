@@ -1,7 +1,5 @@
 package org.example.expiration;
 
-import org.example.expiration.Expiration;
-
 import java.util.Date;
 
 public class ExpiringItem implements Expiration {
@@ -16,8 +14,7 @@ public class ExpiringItem implements Expiration {
 
     public boolean isExpired(){
         Date date = new Date();
-        System.out.println(date);
-        if(date.after(expiryDate))
+        if(date.after(getExpiry()))
             return true;
         else return false;
     }

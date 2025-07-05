@@ -12,10 +12,10 @@ public class Cart {
         items = new ArrayList<>();
     }
 
-    public void add (Product item, int quantity){
-        int q = item.getQuantity();
-        if(item.getQuantity() <= q){
-            items.add(new Item(item, quantity));
+    public void add (Product product, int quantity){
+        int availableQuantity = product.getQuantity();
+        if(quantity <= availableQuantity){
+            items.add(new Item(product, quantity));
         }
         else{
             throw new RuntimeException ("Item quantity is not enough");
